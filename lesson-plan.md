@@ -8,8 +8,6 @@
 
 ## Explain npm projects
 
-## Explain how to export/import modules with vanilla ES6
-
 ## Explain what a bundler does
 
 ## Create a makePanel function that creates a panel (main objectives of the class)
