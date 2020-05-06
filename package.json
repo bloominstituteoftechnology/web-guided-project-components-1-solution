@@ -1,0 +1,13 @@
+{
+  "name": "components1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "less": "^3.11.1",
+    "parcel-bundler": "^1.12.4"
+  }
+}
