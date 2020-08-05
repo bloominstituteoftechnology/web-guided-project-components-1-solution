@@ -7,10 +7,10 @@ import constants from './data/constants.js'
 const { open, close } = constants
 
 // TASK 2- Verify our imports using log statements
-// console.log() // log the title meant for the first panel
+// console.log() // log the panel data
 // console.log() // log the open arrow
 // console.log() // log the close arrow
-console.log(panelData[1].title)
+console.log(panelData)
 
 
 // TASK 3- Comment out the div.panel from index.html and grab its parent element.
@@ -28,8 +28,8 @@ function makePanel({ title, content }/* what data does the panel need? */) {
   const panelContent = document.createElement('div')
   const panelTitle = document.createElement('h3')
   const panelButtons = document.createElement('div')
-  const panelOpenButton = document.createElement('button')
-  const panelCloseButton = document.createElement('button')
+  const openButton = document.createElement('button')
+  const closeButton = document.createElement('button')
 
 
   // TASK 6- Setup the structure of our elements
@@ -38,8 +38,8 @@ function makePanel({ title, content }/* what data does the panel need? */) {
       <div>                 // panelBar
         <h3></h3>           // panelTitle
         <div>               // panelButtons 
-          <button></button> // panelOpenButton
-          <button></button> // panelCloseButton
+          <button></button> // openButton
+          <button></button> // closeButton
         </div>
       </div>
       <div></div>           // panelContent
@@ -49,16 +49,16 @@ function makePanel({ title, content }/* what data does the panel need? */) {
   panel.appendChild(panelContent)
   panelBar.appendChild(panelTitle)
   panelBar.appendChild(panelButtons)
-  panelButtons.appendChild(panelOpenButton)
-  panelButtons.appendChild(panelCloseButton)
+  panelButtons.appendChild(openButton)
+  panelButtons.appendChild(closeButton)
 
 
   // TASK 7- Add classes to our elements (See index.html for reference)
   panel.classList.add('panel')
   panelBar.classList.add('panel-bar')
   panelButtons.classList.add('panel-buttons')
-  panelOpenButton.classList.add('panel-btn-open')
-  panelCloseButton.classList.add('panel-btn-close', 'hide-btn')
+  openButton.classList.add('panel-btn-open')
+  closeButton.classList.add('panel-btn-close', 'hide-btn')
   panelContent.classList.add('panel-content')
 
 
@@ -66,16 +66,16 @@ function makePanel({ title, content }/* what data does the panel need? */) {
   //  and also using the open and close arrows imported at the top of the file
   panelTitle.textContent = title
   panelContent.textContent = content
-  panelOpenButton.textContent = open
-  panelCloseButton.textContent = close
+  openButton.textContent = open
+  closeButton.textContent = close
 
   // TASK 9- When the 'open' or 'close' buttons are clicked, the content is toggled on/off:
   //  - the open button needs to go away (the 'hide-btn' class name controls this)
   //  - the close button needs to show (the 'hide-btn' class name controls this)
   //  - the contents need to show (the 'toggle-on' class name controls this)
   panelButtons.addEventListener('click', event => {
-    panelOpenButton.classList.toggle('hide-btn')
-    panelCloseButton.classList.toggle('hide-btn')
+    openButton.classList.toggle('hide-btn')
+    closeButton.classList.toggle('hide-btn')
     panelContent.classList.toggle('toggle-on')
   })
 
