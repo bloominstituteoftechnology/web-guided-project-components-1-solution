@@ -3,6 +3,7 @@
 //  On the other hand, the default export from data/constants.js
 import panelData from './data/panelData.js'
 import constants from './data/constants.js'
+import linkData from './data/linkData.js'
 
 const { open, close } = constants
 
@@ -101,3 +102,14 @@ panelElements.forEach(panelElement => {
 // and returns an anchor tag with the right href, class and textContent.
 // Loop over the 'linkData' in the data folder, generate anchor tags
 // and append them to the nav.
+function linkMaker({ href, className, text }) {
+  const link = document.createElement('a')
+  link.href = href
+  link.className = className
+  link.textContent = text
+  return link
+}
+linkData.forEach(linkObj => {
+  const linkElement = linkMaker(linkObj)
+  document.querySelector('nav').appendChild(linkElement)
+})
