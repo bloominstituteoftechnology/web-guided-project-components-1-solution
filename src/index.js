@@ -1,5 +1,5 @@
 // TASK 0- Motivate demoing a small makeImage component
-//  that takes an { imgURL } and returns an img element.
+//  that takes an { imageURL } object and returns an img element.
 //  Then loop over these URLs making images as you go:
 const imageData = [
   { imageURL: 'https://images.dog.ceo/breeds/mastiff-tibetan/n02108551_978.jpg' },
@@ -17,20 +17,25 @@ imageData.forEach(imgObj => {
   // document.body.prepend(imgElement)
 })
 
-// TASK 1- Import the data we need to "hydrate" our component
+
+// TASK 1- Import the data we need to "hydrate" our component.
 //  On the one hand, the default export from data/panelData.js
 //  On the other hand, the default export from data/constants.js
+//  Destructure `open` and `close` from the constants
 import panelData from './data/panelData.js'
 import constants from './data/constants.js'
 import linkData from './data/linkData.js'
 
 const { open, close } = constants
 
+
 // TASK 2- Verify our imports using log statements
 // console.log() // log the panel data
 // console.log() // log the open arrow
 // console.log() // log the close arrow
 console.log(panelData)
+console.log(open)
+console.log(close)
 
 
 // TASK 3- Comment out the div.panel from index.html and grab its parent element.
@@ -73,7 +78,8 @@ function makePanel({ title, content }/* what data does the panel need? */) {
   panelButtons.appendChild(closeButton)
 
 
-  // TASK 7- Add classes to our elements (See index.html for reference)
+  // TASK 7- Add classe names to our elements (See index.html for reference)
+  // paying attention to the elements that need to start out hidden
   panel.classList.add('panel')
   panelBar.classList.add('panel-bar')
   panelButtons.classList.add('panel-buttons')
@@ -89,6 +95,7 @@ function makePanel({ title, content }/* what data does the panel need? */) {
   openButton.textContent = open
   closeButton.textContent = close
 
+
   // TASK 9- When the 'open' or 'close' buttons are clicked, the content is toggled on/off:
   //  - the open button needs to go away (the 'hide-btn' class name controls this)
   //  - the close button needs to show (the 'hide-btn' class name controls this)
@@ -103,21 +110,25 @@ function makePanel({ title, content }/* what data does the panel need? */) {
   return panel
 }
 
+// THIS IS DEBUGGING OF THE COMPONENT AS WE BUILD IT
 // const testPanel = makePanel({ title: 'foo', content: 'bar' })
 // accordion.appendChild(testPanel)
 
 
-// TASK 10- Loop through the panelData in the data folder
-//  creating panels for each content and title,
-//  and append them to the DOM
-const panelElements = panelData.map(panelData => makePanel(panelData))
+// TASK 10- Loop through the panelData we imported from the data folder
+//  creating panels for each content and title and append them to the DOM.
+//  We can do this with a single forEach, or with a map and a forEach.
+const panelElements = panelData.map(panelData => {
+  return makePanel(panelData)
+})
 
 panelElements.forEach(panelElement => {
   accordion.appendChild(panelElement)
 })
 
+
 // [STRETCH] Comment out the links inside the nav and
-// write a linkMaker that takes { href, className, text }
+// write a linkMaker that takes an object { href, className, text }
 // and returns an anchor tag with the right href, class and textContent.
 // Loop over the 'linkData' in the data folder, generate anchor tags
 // and append them to the nav.
