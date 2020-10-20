@@ -30,7 +30,7 @@
 * The big demo (Dog Card) can be tedious and the student loses sight of what we're trying to accomplish.
 * Comment out the appending to the DOM after you're done.
 
-## 4- Demo Part II (Creating a Dog Card)
+## 4- Demo Part II (Creating a Panel Maker)
 
 * Use `designs/design.png` to show students what they're building.
 * Starting at `👉 TASK 1` inside `index.js` follow the instructions in the comments.
