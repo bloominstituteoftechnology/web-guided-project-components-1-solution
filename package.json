@@ -13,10 +13,5 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LambdaSchool/web-guided-project-components-1-solution.git"
-  },
-  "author": "",
-  "bugs": {
-    "url": "https://github.com/LambdaSchool/web-guided-project-components-1-solution/issues"
-  },
-  "homepage": "https://github.com/LambdaSchool/web-guided-project-components-1-solution#readme"
+  }
 }
