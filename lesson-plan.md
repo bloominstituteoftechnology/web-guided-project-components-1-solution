@@ -5,7 +5,6 @@
 * Walk the class through the clone, install and start process of the GP repo.
 * Students with a broken Node who can't `npm start` will need to move all data to `index.js`.
 * Imports working relies on the trans-compiling of `npm start`.
-* Test out with the students the git flow for resetting their branch to the instructor's.
 
 ## 2- Instructor's Checklist of Things to Cover
 
@@ -33,13 +32,14 @@
 
 ## 4- Demo Part II (Creating a Dog Card)
 
+* Use `designs/design.png` to show students what they're building.
 * Starting at `👉 TASK 1` inside `index.js` follow the instructions in the comments.
-* Make sure to demo debugging of the work in progress, using log statements or breakpoints.
 * Make the students do as much of the work as possible! Start timers and use Slack threads.
-* But don't copy & paste from Slack: comment and praise students' responses but then type it yourself.
-* Demo the VSCode shortcuts and tricks you like that help you work more effectively.
+* But don't copy & paste from Slack: comment on and praise students' code but then type it yourself.
 * Elicit variable and parameter names from students, and criticize them.
+* Make sure to demo debugging of the work in progress, using log statements or breakpoints.
 * Make bugs on purpose and have students guide you through the debugging process.
+* Demo the VSCode shortcuts and tricks you like that help you work more effectively.
 * This demo includes a gentle intro to importing other modules.
 * Both demos include examples of ES6 destructuring.
 
